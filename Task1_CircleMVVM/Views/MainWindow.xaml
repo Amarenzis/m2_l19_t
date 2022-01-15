@@ -1,0 +1,29 @@
+﻿<Window x:Class="Task1_CircleMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task1_CircleMVVM"
+        xmlns:vm="clr-namespace:Task1_CircleMVVM.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300">
+    <Window.DataContext>
+        <vm:MainWindowVM/>
+    </Window.DataContext>
+    <StackPanel>
+        <Label Content="Введите значение радиуса R:"
+               Margin="10"/>
+        <TextBox Margin="10,0,10,10"
+                 Padding="5"
+                 Text="{Binding Path=Radius}"/>
+        <Button Content="Рассчитать значение длины L:"
+                Margin="10,0,10,0"
+                Padding="5"
+                Command="{Binding Path=CircleLengthCommand}"/>
+        <Label Content="Длина L равна:"
+               Margin="10"/>
+        <TextBox Margin="10,0,10,10"
+                 Padding="5"
+                 Text="{Binding Path=CircleLength}"/>
+    </StackPanel>
+</Window>
